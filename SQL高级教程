@@ -1,0 +1,30 @@
+SQL高级教程：
+
+1.top字句：规定要返回的纪录的数目
+对于拥有数千条字句的大型表来说，top字句非常有用
+		语法：
+		--select top 返回的数目或者前百分之多少 column_name
+		  from table_name
+
+		  eg：SELECT TOP 2 * FROM Persons 	查询Persons表的头两条所有记录
+		  SELECT TOP 50 PERCENT * FROM Persons
+		   查询"Persons" 表中选取 50% 的记录
+
+2.like字句：
+语法：select * from 表名 where 字段 like 条件
+
+四种匹配方式：
+1  %用来匹配0个或者多个字符,可以匹配任意类型和长度的字符,对长度没有限制
+2  '_'表示任意单个字符。匹配单个任意字符，它常用来限制表达式的字符长度语句
+3  []表示括号内所列字符中的一个（类似正则表达式）。指定一个字符、字符串或范围，要求所匹配对象为它们中的任一个。
+	比如 SELECT * FROM [user] WHERE u_name LIKE '[张李王]三'
+将找出“张三”、“李三”、“王三”（而不是“张李王三”）；
+如 [ ] 内有一系列字符（01234、abcde之类的）则可略写为“0-4”、“a-e”
+SELECT * FROM [user] WHERE u_name LIKE '老[1-9]'将找出“老1”、“老2”、……、“老9”；
+
+
+3. IN操作符
+语法：SELECT column_name(s)
+	  FROM table_name
+	  WHERE column_name IN (value1,value2,...)
+	  
