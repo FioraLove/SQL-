@@ -28,3 +28,47 @@ SELECT * FROM [user] WHERE u_name LIKE '老[1-9]'将找出“老1”、“老2�
 	  FROM table_name
 	  WHERE column_name IN (value1,value2,...)
 	  
+4.  SQL Alias（别名）
+
+通过使用 SQL，可以为列名称和表名称指定别名（Alias）
+	4.1 表的 SQL Alias 语法
+		SELECT column_name(s)
+		FROM table_name
+		AS alias_name
+
+	4.2 列的 SQL Alias 语法
+		SELECT column_name AS alias_name
+		FROM table_name
+
+		eg：假设我们有两个表分别是："Persons" 和 "Product_Orders"。我们分别为它们指定别名 "p" 和 "po"。
+		现在，我们希望列出 "John Adams" 的所有定单。
+		我们可以使用下面的 SELECT 语句：
+		SELECT po.OrderID, p.LastName, p.FirstName
+		FROM Persons AS p, Product_Orders AS po
+		WHERE p.LastName='Adams' AND p.FirstName='John'
+
+
+		SELECT LastName AS Family, FirstName AS Name
+FROM Persons
+
+
+5.SQL JOIN内连接
+	有时为了得到完整的结果，我们需要从两个或更多的表中获取结果。我们就需要执行 join。
+    数据库中的表可通过键将彼此联系起来。
+    5.1主键（Primary Key）是一个列，在这个列中的每一行的值都是唯一的。在表中，每个主键的值都是唯一的。这样做的目的是在不重复每个表中的所有数据的情况下，把表间的数据交叉捆绑在一起
+	SELECT Persons.LastName, Persons.FirstName, Orders.OrderNo
+	FROM Persons, Orders
+	WHERE Persons.Id_P = Orders.Id_P
+
+
+	5.2 SQL JOIN - 使用 Join
+除了上面的方法，我们也可以使用关键词 JOIN 来从两个表中获取数据。
+
+如果我们希望列出所有人的定购，可以使用下面的 SELECT 语句：
+
+SELECT Persons.LastName, Persons.FirstName, Orders.OrderNo
+FROM Persons
+INNER JOIN Orders
+ON Persons.Id_P = Orders.Id_P
+ORDER BY Persons.LastName
+
