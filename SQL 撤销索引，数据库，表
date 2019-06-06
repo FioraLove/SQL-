@@ -1,0 +1,39 @@
+12.SQL CREATE UNIQUE INDEX 语法
+在表上创建一个唯一的索引。唯一的索引意味着两个行不能拥有相同的索引值。
+
+CREATE UNIQUE INDEX index_name
+ON table_name (column_name)
+
+CREATE INDEX 实例
+本例会创建一个简单的索引，名为 "PersonIndex"，在 Person 表的 LastName 列：
+CREATE INDEX PersonIndex
+ON Person (LastName) 
+
+
+如果您希望以降序索引某个列中的值，您可以在列名称之后添加保留字 DESC：
+CREATE INDEX PersonIndex
+ON Person (LastName DESC) 
+
+
+假如您希望索引不止一个列，您可以在括号中列出这些列的名称，用逗号隔开：
+CREATE INDEX PersonIndex
+ON Person (LastName, FirstName)
+
+13. SQL 撤销索引、表以及数据库
+通过使用 DROP 语句，可以轻松地删除索引、表和数据库。
+
+SQL DROP INDEX 语句：
+我们可以使用 DROP INDEX 命令删除表格中的索引。
+
+
+SQL DROP TABLE 语句：DROP TABLE 语句用于删除表（表的结构、属性以及索引也会被删除）：
+DROP TABLE 表名称
+
+
+DROP DATABASE 语句用于删除数据库：
+DROP DATABASE 数据库名称
+
+
+如果我们仅仅需要除去表内的数据，但并不删除表本身，那么我们该如何做呢？
+请使用 TRUNCATE TABLE 命令（仅仅删除表格中的数据）：
+TRUNCATE TABLE 表名称
