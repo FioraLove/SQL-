@@ -1,0 +1,32 @@
+9.create database_name 创建数据库
+语法：create database database_name
+
+    create table语句：用于创建数据库的表
+    --语法：create table table_name(
+				列名称1 数据类型,
+				列名称2 数据类型,
+				列名称3 数据类型,
+				....
+    				);
+
+10. SQL Constraints(SQL约束)
+约束用于限制加入表的数据的类型。
+可以在创建表时规定约束（通过 CREATE TABLE 语句），或者在表创建之后也可以（通过 ALTER TABLE 语句）。
+
+我们将主要探讨以下几种约束：
+					NOT NULL
+					UNIQUE
+					PRIMARY KEY
+					FOREIGN KEY
+					CHECK
+					DEFAULT
+
+
+11. SQL PRIMARY KEY 约束（主属性约束）
+PRIMARY KEY 约束唯一标识数据库表中的每条记录。
+
+主键必须包含唯一的值。
+
+主键列不能包含 NULL 值。
+
+每个表都应该有一个主键，并且每个表只能有一个主键。
