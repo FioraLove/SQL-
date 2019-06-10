@@ -1,0 +1,27 @@
+SQL 创建视图：视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。我们可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，我们也可以提交数据，就像这些来自于某个单一的表。
+
+注释：数据库的设计和结构不会受到视图中的函数、where 或 join 语句的影响。
+
+SQL CREATE VIEW 语法
+CREATE VIEW view_name AS
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+
+SQL 更新视图
+您可以使用下面的语法来更新视图：
+CREATE OR REPLACE VIEW view_name AS
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+
+现在，我们希望向 "Current Product List" 视图添加 "Category" 列。我们将通过下列 SQL 更新视图：
+CREATE VIEW [Current Product List] AS
+SELECT ProductID,ProductName,Category
+FROM Products
+WHERE Discontinued=No
+
+
+SQL 撤销视图
+您可以通过 DROP VIEW 命令来删除视图：
+DROP VIEW view_name
