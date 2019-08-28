@@ -1,3 +1,29 @@
+### SQL最常用的数据类型
+
+	数据类型				描述
+	integer(size)			仅容纳整数。在括号内规定数字的最大位数。
+	int(size)				
+	smallint(size)			
+	tinyint(size)			
+	
+	decimal(size,d)			容纳带有小数的数字。"size" 规定数字的最大位数。"d" 规定小数点右侧的最大位数。
+	numeric(size,d)
+	
+	char(size)				在括号中规定字符串的长度，容纳固定长度的字符串（可容纳字母、数字以及特殊字符）。
+	varchar(size)			容纳可变长度的字符串（可容纳字母、数字以及特殊的字符）。在括号中规定字符串的最大长度。
+
+	date(yyyymmdd)			容纳日期。
+	
+### SQL的几种约束：
+
+	NOT NULL
+	UNIQUE
+	PRIMARY KEY
+	FOREIGN KEY
+	CHECK
+	DEFAULT
+
+
 ### 1.SQL
 
       SQL 是用于访问和处理数据库的标准的计算机语言
